@@ -2,8 +2,8 @@
 <html>
 	<body>
 		<h1>Reset your password</h1>
-		<form method="post" action="reset.js">
-			Email: <input type="email" name="email" /> <br />
+		<form action="#" onsubmit="return validateForm(this);">
+			Email: <input type="email" name="emailAddress" /> <br />
 			<input value="Submit" type="submit" />
 		</form>
 		<script src="https://www.gstatic.com/firebasejs/4.2.0/firebase.js"></script>
@@ -22,6 +22,25 @@
 				messagingSenderId: "834983002476"
 			};
 			firebase.initializeApp(config);
+		</script>
+		<script>
+			function validateForm(form) {
+				if (validateEmail(document.forms["myForm"]["email"].value)) {
+					window.location.href = "/replace.html"
+				} else {
+					alert("Invalid email");
+				}
+			}
+			function validateEmail(emailAddress) {
+				var atpos = emailAddress.indexOf("@");
+				var dotpos = emailAddress.lastIndexOf(".");
+				if (atpos<1 || dotpos<atpos+2 || dotpos+2>=emailAddress.length) {
+					alert("Not a valid e-mail address");
+					return false;
+				} else {
+					return true;
+				}
+			}
 		</script>
 	</body>
 </html>
