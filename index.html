@@ -1,5 +1,23 @@
-<h1>Reset your password</h1>
-<form>
-	Email: <input type=email name=email /> <br />
-	<input value=Submit type=submit />
-</form>
+<!DOCTYPE html>
+<html>
+	<body>
+		<h1>Reset your password</h1>
+		<form method="post">
+			Email: <input type="email" name="email" /> <br />
+			<input value="Submit" type="submit" />
+		</form>
+		<script src="https://www.gstatic.com/firebasejs/4.2.0/firebase.js"></script>
+		<script>
+			// Initialize Firebase
+			var config = {
+				apiKey: "AIzaSyB3NfuY86SMNNlX4s35-6ZvKRemya_WewU",
+				authDomain: "starfish-support.firebaseapp.com",
+				databaseURL: "https://starfish-support.firebaseio.com",
+				projectId: "starfish-support",
+				storageBucket: "starfish-support.appspot.com",
+				messagingSenderId: "834983002476"
+			};
+			firebase.initializeApp(config);
+		</script>
+	</body>
+</html>
