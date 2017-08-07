@@ -6,39 +6,5 @@
 			Email: <input type="email" name="emailAddress" /> <br />
 			<input value="Submit" type="submit" />
 		</form>
-		<script src="https://www.gstatic.com/firebasejs/4.2.0/firebase.js"></script>
-		
-		<script src="https://www.gstatic.com/firebasejs/4.2.0/firebase-app.js"></script>
-		<script src="https://www.gstatic.com/firebasejs/4.2.0/firebase-auth.js"></script>
-		
-		<script>
-			// Initialize Firebase
-			var config = {
-				apiKey: "AIzaSyB3NfuY86SMNNlX4s35-6ZvKRemya_WewU",
-				authDomain: "starfish-support.firebaseapp.com",
-				databaseURL: "https://starfish-support.firebaseio.com",
-				projectId: "starfish-support",
-				storageBucket: "starfish-support.appspot.com",
-				messagingSenderId: "834983002476"
-			};
-			firebase.initializeApp(config);
-		</script>
-		<script>
-			function validateForm(form) {
-				if (validateEmail(document.form.emailAddress.value)) {
-					alert("Done!");
-					window.location.href = "/reset.html"
-				}
-			}
-			function validateEmail(emailAddress) {
-				var atpos = emailAddress.indexOf("@");
-				var dotpos = emailAddress.lastIndexOf(".");
-				if (atpos<1 || dotpos<atpos+2 || dotpos+2>=emailAddress.length) {
-					return false;
-				} else {
-					return true;
-				}
-			}
-		</script>
 	</body>
 </html>
