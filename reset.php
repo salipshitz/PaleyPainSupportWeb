@@ -1,7 +1,3 @@
-<?php
-	var email = $_POST["emailAddress"];
-?>
-
 <script src="https://www.gstatic.com/firebasejs/4.2.0/firebase.js"></script>
 <script src="https://www.gstatic.com/firebasejs/4.2.0/firebase-app.js"></script>
 <script src="https://www.gstatic.com/firebasejs/4.2.0/firebase-auth.js"></script>
@@ -18,6 +14,16 @@
 	firebase.initializeApp(config);
 </script>
 <script>
-	function firebaseHandling() {
-	
-}
+	function resetPassword(emailAddress) {
+		var auth = firebase.auth();
+		auth.sendPasswordResetEmail(emailAddress).then(function() {
+		document.body.textContent = "Done!"
+		}).catch(function(error) {
+			document.body.textContent = "Error: " + error;
+		}
+	}
+</script>
+<?php
+	var email = $_POST["emailAddress"];
+	echo '<script>resetPassword('.email.');</script>';
+?>
