@@ -2,7 +2,7 @@
 <html>
 	<body>
 		<h1>Reset your password</h1>
-		<form method="post" action="#" onsubmit="return validateForm(this);">
+		<form method="get" action="reset.html" onsubmit="return validateForm(this);">
 			Email: <input type="email" name="emailAddress" /> <br />
 			<input value="Submit" type="submit" />
 		</form>
@@ -27,7 +27,7 @@
 			function validateForm(form) {
 				if (validateEmail(document.form.emailAddress.value)) {
 					alert("Done!");
-					window.location.href = "/replace.html"
+					window.location.href = "/reset.html"
 				}
 			}
 			function validateEmail(emailAddress) {
