@@ -24,6 +24,6 @@
 	}
 </script>
 <?php
-	var email = $_POST["emailAddress"];
+	var email = $_GET["emailAddress"];
 	echo '<script>resetPassword('.email.');</script>';
 ?>
